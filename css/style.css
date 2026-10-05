@@ -1,0 +1,871 @@
+/* ==================== RESET & BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary-color: #8B7355;
+    --secondary-color: #C4A77D;
+    --accent-color: #D4AF37;
+    --gold-light: #E8D5B7;
+    --cream: #F5F0E8;
+    --ivory: #FFFFF0;
+    --text-dark: #3D3D3D;
+    --text-light: #6B6B6B;
+    --white: #FFFFFF;
+
+    /* Fonts */
+    --font-arabic: 'Noto Naskh Arabic', serif;
+    --font-tajawal: 'Tajawal', sans-serif;
+    --font-english: 'Tangerine', cursive;
+
+    /* Spacing */
+    --section-padding: 80px 20px;
+    --container-max: 800px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-tajawal);
+    background-color: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== ENVELOPE SCREEN ==================== */
+.envelope-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.envelope-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.envelope-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 900px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.envelope-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.envelope-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    text-align: center;
+}
+
+.envelope-text {
+    font-family: var(--font-arabic);
+    font-size: 1.3rem;
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.envelope-hint {
+    font-size: 2rem;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ==================== VIDEO SCREEN ==================== */
+.video-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease;
+}
+
+.video-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.invite-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================== MAIN WEBSITE ==================== */
+.main-website {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.main-website.visible {
+    opacity: 1;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(245, 240, 232, 0.3),
+        rgba(245, 240, 232, 0.7) 70%,
+        var(--cream)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 100px 20px 60px;
+    max-width: 700px;
+}
+
+.hero-basmala {
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-intro {
+    font-family: var(--font-arabic);
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.hero-intro-2 {
+    font-family: var(--font-arabic);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.hero-separator {
+    margin: 25px auto;
+}
+
+.separator-img {
+    height: 40px;
+    opacity: 0.7;
+}
+
+.hero-tashreef {
+    font-family: var(--font-arabic);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.families-names {
+    margin-bottom: 25px;
+}
+
+.family-name {
+    font-family: var(--font-arabic);
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.family-and {
+    font-family: var(--font-arabic);
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin: 8px 0;
+}
+
+.hero-invite-text {
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 35px;
+}
+
+.couple-names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.groom-name,
+.bride-name {
+    font-family: var(--font-arabic);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.name-separator {
+    font-family: var(--font-english);
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+.wedding-date {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 25px 40px;
+    border-radius: 15px;
+    border: 1px solid var(--gold-light);
+    display: inline-block;
+}
+
+.day-name {
+    font-family: var(--font-arabic);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.date-numbers {
+    font-family: var(--font-tajawal);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.date-text {
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 20px; }
+}
+
+.scroll-indicator p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ==================== SECTIONS GENERAL ==================== */
+section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-family: var(--font-arabic);
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-family: var(--font-tajawal);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-separator {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-separator .separator-img {
+    height: 50px;
+}
+
+/* ==================== COUNTDOWN SECTION ==================== */
+.countdown-section {
+    background: linear-gradient(to bottom, var(--cream), var(--ivory));
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-decoration {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.decoration-img {
+    height: 200px;
+    opacity: 0.15;
+}
+
+.decoration-img.right {
+    transform: scaleX(-1);
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: var(--white);
+    border: 2px solid var(--gold-light);
+    border-radius: 15px;
+    padding: 25px 20px;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.countdown-value {
+    display: block;
+    font-family: var(--font-tajawal);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-family: var(--font-arabic);
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.countdown-separator {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+
+/* ==================== DETAILS SECTION ==================== */
+.details-section {
+    background: var(--ivory);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.detail-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    border: 1px solid var(--gold-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+}
+
+.detail-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.detail-title {
+    font-family: var(--font-arabic);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.detail-text {
+    font-family: var(--font-tajawal);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.detail-subtext {
+    font-family: var(--font-tajawal);
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.detail-location {
+    font-family: var(--font-tajawal);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: 8px;
+}
+
+.venue-map-container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border: 1px solid var(--gold-light);
+}
+
+.venue-map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.map-buttons {
+    text-align: center;
+}
+
+.map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-tajawal);
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
+}
+
+.map-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 115, 85, 0.4);
+}
+
+/* ==================== RSVP SECTION ==================== */
+.rsvp-section {
+    background: linear-gradient(to bottom, var(--ivory), var(--cream));
+}
+
+.rsvp-deadline {
+    text-align: center;
+    font-family: var(--font-arabic);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.rsvp-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gold-light);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-arabic);
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.optional {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--gold-light);
+    border-radius: 10px;
+    font-family: var(--font-tajawal);
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: var(--cream);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Radio Group */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid var(--gold-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 140px;
+}
+
+.radio-option:hover {
+    border-color: var(--secondary-color);
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radio-option input[type="radio"]:checked + .radio-checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.radio-label {
+    font-family: var(--font-tajawal);
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-tajawal);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 115, 85, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Success/Decline Messages */
+.success-message,
+.decline-message {
+    text-align: center;
+    padding: 50px 30px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gold-light);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.success-icon,
+.decline-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.success-message h3,
+.decline-message h3 {
+    font-family: var(--font-arabic);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.success-message p,
+.decline-message p {
+    font-family: var(--font-tajawal);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.success-subtext {
+    color: var(--text-light) !important;
+    font-size: 0.95rem !important;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background: var(--cream);
+    padding: 50px 20px 30px;
+    text-align: center;
+}
+
+.footer-separator {
+    margin-bottom: 25px;
+}
+
+.footer-names {
+    font-family: var(--font-arabic);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.footer-date {
+    font-family: var(--font-tajawal);
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.footer-credit {
+    font-family: var(--font-arabic);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 15px;
+    }
+
+    .groom-name,
+    .bride-name {
+        font-size: 2.2rem;
+    }
+
+    .name-separator {
+        font-size: 2rem;
+    }
+
+    .couple-names {
+        gap: 12px;
+    }
+
+    .wedding-date {
+        padding: 20px 25px;
+    }
+
+    .date-numbers {
+        font-size: 1.6rem;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+        padding: 20px 15px;
+    }
+
+    .countdown-value {
+        font-size: 2.2rem;
+    }
+
+    .countdown-separator {
+        font-size: 1.8rem;
+    }
+
+    .decoration-img {
+        height: 120px;
+    }
+
+    .rsvp-form {
+        padding: 30px 20px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .name-separator {
+        margin: 5px 0;
+    }
+
+    .countdown-timer {
+        gap: 8px;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+        padding: 15px 10px;
+    }
+
+    .countdown-value {
+        font-size: 1.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.85rem;
+    }
+}

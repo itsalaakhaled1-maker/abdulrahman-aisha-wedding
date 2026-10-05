@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبدالرحمن & عائشة - دعوة زفاف</title>
+    <meta name="description" content="دعوة زفاف عبدالرحمن و عائشة - 6 نوفمبر 2026">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== ENVELOPE SCREEN ==================== -->
+    <div id="envelope-screen" class="envelope-screen">
+        <div class="envelope-container">
+            <img src="images/envelope-cover.jpg" alt="دعوة زفاف" class="envelope-image">
+            <div class="envelope-overlay">
+                <p class="envelope-text">يرجى الضغط للاطلاع على الدعوة</p>
+                <div class="envelope-hint">
+                    <span class="tap-icon">👆</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== VIDEO SCREEN ==================== -->
+    <div id="video-screen" class="video-screen hidden">
+        <video id="invite-video" class="invite-video" playsinline>
+            <source src="videos/invite-video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- ==================== MAIN WEBSITE ==================== -->
+    <div id="main-website" class="main-website hidden">
+
+        <!-- Hero Section with Video Background -->
+        <section class="hero-section">
+            <div class="hero-video-container">
+                <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+                    <source src="videos/hero-video.mp4" type="video/mp4" media="(min-width: 768px)">
+                    <source src="videos/hero-video-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <p class="hero-basmala">بسم الله الرحمن الرحيم</p>
+                <p class="hero-intro">لمّن كان وصالهم عزيزاً على قلوبنا</p>
+                <p class="hero-intro-2">لازلنا بَالأفراح نُحب وصالكم</p>
+
+                <div class="hero-separator">
+                    <img src="assets/separator-blossom.png" alt="✦" class="separator-img">
+                </div>
+
+                <p class="hero-tashreef">تتشرف</p>
+
+                <div class="families-names">
+                    <p class="family-name">عائلة السيد أحمد عبدالله الحمادي</p>
+                    <p class="family-and">و</p>
+                    <p class="family-name">عائلة السيد محمد بن درويش الفارسي</p>
+                </div>
+
+                <p class="hero-invite-text">بدعوتكم لحضور حفل زفاف نجليهما</p>
+
+                <div class="couple-names">
+                    <h1 class="groom-name">عبدالرحمن</h1>
+                    <span class="name-separator">&</span>
+                    <h1 class="bride-name">عائشة</h1>
+                </div>
+
+                <div class="wedding-date">
+                    <p class="day-name">يـــوم الجمعـــة</p>
+                    <p class="date-numbers">6 . 11 . 2026</p>
+                    <p class="date-text">6 نوفمبر 2026</p>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>اسحب للأسفل</p>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <div class="countdown-decoration">
+                <img src="assets/clock-branch.png" alt="" class="decoration-img left">
+                <img src="assets/clock-branch.png" alt="" class="decoration-img right">
+            </div>
+
+            <div class="container">
+                <h2 class="section-title">العـــدّ التنـــازلــــي</h2>
+
+                <div class="countdown-timer" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">0</span>
+                        <span class="countdown-label">يوم</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">0</span>
+                        <span class="countdown-label">ساعة</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">0</span>
+                        <span class="countdown-label">دقيقة</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">0</span>
+                        <span class="countdown-label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section class="details-section">
+            <div class="container">
+                <h2 class="section-title">تفاصيل اليوم</h2>
+                <p class="section-subtitle">كل ما تحتاج معرفته</p>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">📍</div>
+                        <h3 class="detail-title">الموقع</h3>
+                        <p class="detail-text">مركز جواهر للمناسبات والمؤتمرات</p>
+                        <p class="detail-subtext">قاعة الزمرد والياقوت</p>
+                        <p class="detail-location">الشارقة، الإمارات</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">🕐</div>
+                        <h3 class="detail-title">الوقت</h3>
+                        <p class="detail-text">8:30 مساءً</p>
+                        <p class="detail-subtext">الاستقبال يبدأ من الساعة 8:00</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">👔</div>
+                        <h3 class="detail-title">زي المناسبة</h3>
+                        <p class="detail-text">رسمي</p>
+                        <p class="detail-subtext">Black Tie Optional</p>
+                    </div>
+                </div>
+
+                <div class="venue-map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Al+Jawaher+Reception+and+Convention+Centre+Sharjah&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="مركز جواهر للمناسبات والمؤتمرات">
+                    </iframe>
+                </div>
+
+                <div class="map-buttons">
+                    <a href="https://maps.app.goo.gl/csspRUSRHyQSXTXn8" target="_blank" class="map-btn">
+                        <span>📍</span> فتح في خرائط جوجل
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <div class="section-separator">
+            <img src="assets/separator-blossom.png" alt="✦" class="separator-img">
+        </div>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section">
+            <div class="container">
+                <h2 class="section-title">تـــأكيــــــد الحضــــــور</h2>
+                <p class="rsvp-deadline">يرجى التأكيد قبل 4 نوفمبر 2026</p>
+
+                <form class="rsvp-form" id="rsvp-form">
+                    <div class="form-group">
+                        <label for="guest-name">الاسم الكامل *</label>
+                        <input type="text" id="guest-name" name="guest-name" placeholder="اسمك الكامل" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>هل ستحضرون؟ *</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="attendance" value="yes" required>
+                                <span class="radio-checkmark"></span>
+                                <span class="radio-label">نعم، سأحضر</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="attendance" value="no" required>
+                                <span class="radio-checkmark"></span>
+                                <span class="radio-label">لا، أعتذر عن الحضور</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">رسالة للعروسين <span class="optional">(اختياري)</span></label>
+                        <textarea id="message" name="message" placeholder="شاركونا تمنياتكم..." rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <span class="btn-text">إرسال التأكيد</span>
+                        <span class="btn-loading hidden">جارٍ الإرسال...</span>
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-message hidden" id="success-message">
+                    <div class="success-icon">💕</div>
+                    <h3>شكراً لتأكيد حضوركم!</h3>
+                    <p>وصلنا ردّكم</p>
+                    <p class="success-subtext">شكراً لتأكيد حضوركم. لا نطيق صبراً للاحتفال معكم!</p>
+                </div>
+
+                <!-- Decline Message -->
+                <div class="decline-message hidden" id="decline-message">
+                    <div class="decline-icon">💐</div>
+                    <h3>شكراً لإعلامنا</h3>
+                    <p>سنفتقدكم ونأمل لقاءكم في وقت آخر!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-separator">
+                    <img src="assets/separator-blossom.png" alt="✦" class="separator-img">
+                </div>
+                <p class="footer-names">عبدالرحمن & عائشة</p>
+                <p class="footer-date">6 نوفمبر 2026</p>
+                <p class="footer-credit">بحب ودعاء</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
